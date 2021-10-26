@@ -5,8 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TicTacToe</title>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <header>TicTacToe</header>
+    <main>
+      <div class="winnerDiv">
+        <div class="winner"></div>
+        <button class="winner restart">Play Again</button>
+        <div class="winner whosMove">ahoj</div>
+      </div>
+      <form class="initial">
+        <label for="player1">Player X</label><br />
+        <input id="player1" type="text" /><br />
+        <label for="player2">Player O</label><br />
+        <input id="player2" type="text" /><br />
+        <input type="submit" value="Submit" />
+      </form>
+
+      <div class="container">
+        <div class="fieldsContainer"></div>
+      </div>
+    </main>
+    <footer class="footer">Copyright &#169; 2021</footer>
+  </body>
 </html>
