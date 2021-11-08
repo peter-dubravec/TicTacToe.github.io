@@ -5,6 +5,7 @@ let players = function (name, sign, played) {
 // intialize player1 and player2
 let player1;
 let player2;
+let isAlreadyWinner = false;
 let gameRestart = false;
 
 let initial = (() => {
@@ -63,9 +64,9 @@ let whoWon = (function () {
   let winnerOfGame = (player) => {
     let winner = document.querySelector(".winner");
     disableInputs();
-
     winner.innerHTML = `Congratulation, winner is <span>${player.name}</span>!!!`;
     winner.style.display = "block";
+    isAlreadyWinner = true;
   };
 
   let draw = () => {
@@ -90,14 +91,16 @@ let game = (function () {
     if (square.textContent == "") {
       let player = whichPlayer.whichOne(player1, player2);
       square.textContent = player.sign;
-      displayWhosMove(player);
       let winner = checkForWinner.winner();
+      if (isAlreadyWinner) {
+        return;
+      }
       if (typeof winner == "object") {
         whoWon.winnerOfGame(winner);
       } else if (winner == "draw") {
         whoWon.draw();
       } else {
-        return;
+        displayWhosMove(player);
       }
     }
   };
@@ -225,4 +228,5 @@ restartButton.addEventListener("click", function () {
   let winner = document.querySelector(".winner");
   winner.style.display = "none";
   document.querySelector(".whosMove").textContent = "X";
+  isAlreadyWinner = false;
 });
