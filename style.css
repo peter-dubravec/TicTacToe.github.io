@@ -47,6 +47,10 @@ main {
   border-radius: 5px;
 }
 
+div.winner {
+  margin-top: 50px;
+}
+
 #player1 {
   margin-bottom: 30px;
 }
@@ -118,8 +122,11 @@ span {
 }
 
 @media (max-height: 1000px) {
-  .winner {
-    margin-top: 30px;
+  .fieldsContainer {
+    transform: scale(0.85);
+  }
+  div.winner {
+    margin-top: 20px;
   }
   .restart {
     margin-top: 70px;
@@ -133,12 +140,18 @@ span {
 }
 
 @media (max-height: 850px) {
+  div.winner {
+    margin-top: 20px;
+  }
   .fieldsContainer {
-    transform: scale(0.8);
+    transform: scale(0.75);
   }
 }
 
 @media (max-height: 800px) {
+  div.winner {
+    margin-top: 15px;
+  }
   .fieldsContainer {
     transform: scale(0.7);
   }
@@ -148,8 +161,8 @@ span {
   .fieldsContainer {
     transform: scale(0.6);
   }
-  .winner {
-    margin-top: 15px;
+  div.winner {
+    margin-top: 10px;
   }
   .restart {
     margin-top: 55px;
